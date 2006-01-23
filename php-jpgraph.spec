@@ -26,6 +26,8 @@ to assign sensible default values for most parameters hence making the
 learning curve quite flat since for most of the time very few commands
 is required to draw graphs with a pleasing aesthetic look.
 
+Note: The 2.x series is only for PHP5. It will not work on PHP4
+
 %description -l pl
 JpGraph to w pe³ni obiektowo zorientowana biblioteka u³atwiaj±ca
 tworzenie zarówno prostych (,,na szybko'') jak i skomplikowanych,

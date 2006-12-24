@@ -5,6 +5,7 @@ Version:	2.0
 Release:	2
 License:	QPL
 Group:		Libraries
+#Source0Download: http://www.aditus.nu/jpgraph/jpdownload.php
 Source0:	http://members.chello.se/jpgraph/jpgdownloads/jpgraph-%{version}.tar.gz
 # Source0-md5:	343c355a5c50cdbae49706cba20083ea
 Patch0:		%{name}-config.patch

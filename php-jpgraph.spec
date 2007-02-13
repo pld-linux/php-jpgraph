@@ -1,5 +1,5 @@
 Summary:	Class for creating esientific and business charts, works with php5
-Summary(pl.UTF-8):   Klasa do tworzenia naukowych i biznesowych wykresów, działa z php5
+Summary(pl.UTF-8):	Klasa do tworzenia naukowych i biznesowych wykresów, działa z php5
 Name:		jpgraph2
 Version:	2.0
 Release:	2

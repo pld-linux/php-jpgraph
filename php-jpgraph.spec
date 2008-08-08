@@ -43,6 +43,8 @@ Uwaga: wersje 2.x są tylko dla PHP5, nie będą działać z PHP4.
 %setup  -q -n jpgraph-%{version}
 %patch0 -p1
 
+rm -rf src/*.orig src/*~
+
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_phpsharedir}/%{name}

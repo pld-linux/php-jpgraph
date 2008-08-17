@@ -10,6 +10,7 @@ Source0:	http://hem.bredband.net/jpgraph2/jpgraph-%{version}.tar.gz
 # Source0-md5:	54ab2ac3dc06c608b4af47e22962baa9
 Patch0:		%{name}-config.patch
 URL:		http://www.aditus.nu/jpgraph/
+BuildRequires:	sed >= 4.0
 BuildRequires:	unzip
 Requires:	%{_datadir}/fonts/TTF
 Requires:	php(gd)

@@ -2,11 +2,11 @@ Summary:	Class for creating esientific and business charts, works with php5
 Summary(pl.UTF-8):	Klasa do tworzenia naukowych i biznesowych wykresów, działa z php5
 Name:		jpgraph2
 Version:	2.3.3
-Release:	3
-License:	QPL
+Release:	4
+License:	QPL 1.0
 Group:		Libraries
-#Source0Download: http://www.aditus.nu/jpgraph/jpdownload.php
-Source0:	http://hem.bredband.net/jpgraph2/jpgraph-%{version}.tar.gz
+# Source0Download: http://www.aditus.nu/jpgraph/jpdownload.php
+Source0:	http://hem.bredband.net/jpgraph2/jpgraph-2.3.3.tar.gz
 # Source0-md5:	54ab2ac3dc06c608b4af47e22962baa9
 Patch0:		%{name}-config.patch
 URL:		http://www.aditus.nu/jpgraph/
@@ -18,7 +18,7 @@ Requires:	php-common >= 4:5.1.0
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_phpsharedir	%{_datadir}/php
+%define		_appdir			%{php_data_dir}/%{name}
 
 %description
 JpGraph is a fully OO graph library which makes it easy to both draw a
@@ -44,22 +44,26 @@ Uwaga: wersje 2.x są tylko dla PHP5, nie będą działać z PHP4.
 %setup  -q -n jpgraph-%{version}
 %patch0 -p1
 
-sed -i -e 's#img/img/img/img/img/img/#img/#g' docs/html/*.html
-sed -i -e 's#\.\./#../img/#g' docs/html/*/*.html
+%{__sed} -i -e 's#img/img/img/img/img/img/#img/#g' docs/html/*.html
+%{__sed} -i -e 's#\.\./#../img/#g' docs/html/*/*.html
 
-rm -rf src/*.orig src/*~
+mv src/*.txt .
+mv src/Examples .
+
+# cleanup backups after patching
+find '(' -name '*~' -o -name '*.orig' ')' -print0 | xargs -0 -r -l512 rm -f
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_phpsharedir}/%{name}
-
-install src/*.*		$RPM_BUILD_ROOT%{_phpsharedir}/%{name}
-cp -a src/lang $RPM_BUILD_ROOT%{_phpsharedir}/%{name}
+install -d $RPM_BUILD_ROOT{%{_appdir},%{_examplesdir}/%{name}-%{version}}
+cp -a src/* $RPM_BUILD_ROOT%{_appdir}
+cp -a Examples/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc README* docs/*
-%{_phpsharedir}/%{name}
+%doc README* docs/* CHANGELOG*.txt
+%{_appdir}
+%{_examplesdir}/%{name}-%{version}

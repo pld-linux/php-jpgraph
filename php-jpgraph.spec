@@ -50,6 +50,10 @@ Uwaga: wersje 2.x są tylko dla PHP5, nie będą działać z PHP4.
 mv src/*.txt .
 mv src/Examples .
 
+%{__sed} -i -e 's,include ("../\(.*\)");,require_once "jpgraph2/\1";,' Examples/*.php
+%{__sed} -i -e 's,include_once ("../\(.*\)");,require_once "jpgraph2/\1";,' Examples/*.php
+%{__sed} -i -e 's,include "../\(.*\)";,require_once "jpgraph2/\1";,' Examples/*.php
+
 # cleanup backups after patching
 find '(' -name '*~' -o -name '*.orig' ')' -print0 | xargs -0 -r -l512 rm -f
 

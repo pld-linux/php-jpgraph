@@ -2,7 +2,7 @@ Summary:	Class for creating esientific and business charts, works with php5
 Summary(pl.UTF-8):	Klasa do tworzenia naukowych i biznesowych wykresów, działa z php5
 Name:		jpgraph2
 Version:	2.3.4
-Release:	3
+Release:	4
 License:	QPL 1.0
 Group:		Libraries
 # Source0Download: http://www.aditus.nu/jpgraph/jpdownload.php
@@ -46,7 +46,6 @@ Uwaga: wersje 2.x są tylko dla PHP5, nie będą działać z PHP4.
 %{__sed} -i -e 's#img/img/img/img/img/img/#img/#g' docs/html/*.html
 %{__sed} -i -e 's#\.\./#../img/#g' docs/html/*/*.html
 
-mv src/*.txt .
 mv src/Examples .
 
 %{__sed} -i -e 's,include ("../\(.*\)");,require_once "jpgraph2/\1";,' Examples/*.php
@@ -67,6 +66,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc README* docs/* CHANGELOG*.txt
+%doc README* docs/*
 %{_appdir}
 %{_examplesdir}/%{name}-%{version}

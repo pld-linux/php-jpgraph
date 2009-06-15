@@ -1,20 +1,19 @@
-diff -urN jpgraph-1.17.orig/src/jpg-config.inc.php jpgraph-1.17/src/jpg-config.inc.php
---- jpgraph-1.17.orig/src/jpg-config.inc.php	2005-01-16 22:31:50.000000000 +0100
-+++ jpgraph-1.17/src/jpg-config.inc.php	2005-01-17 08:40:38.065112520 +0100
-@@ -39,7 +39,7 @@
+--- jpgraph-2.3.4/src/jpg-config.inc.php~	2009-06-15 17:35:46.000000000 +0300
++++ jpgraph-2.3.4/src/jpg-config.inc.php	2009-06-15 17:36:32.632029137 +0300
+@@ -37,7 +37,7 @@
  //
  //------------------------------------------------------------------------
- // DEFINE("CACHE_DIR","/tmp/jpgraph_cache/");
--// DEFINE("TTF_DIR","/usr/X11R6/lib/X11/fonts/truetype/");
+ // define("CACHE_DIR","/tmp/jpgraph_cache/");
+-// define("TTF_DIR","/usr/share/fonts/truetype/");
 +DEFINE("TTF_DIR","/usr/share/fonts/TTF/");
- // DEFINE("MBTTF_DIR","/usr/share/fonts/ja/TrueType/");
+ // define("MBTTF_DIR","/usr/share/fonts/ja/TrueType/");
  
  //-------------------------------------------------------------------------
-@@ -164,7 +164,7 @@
+@@ -196,7 +196,7 @@
  // Please note that the Apache user must be a member of the
  // specified group since otherwise it is impossible for Apache
  // to set the specified group.
--DEFINE("CACHE_FILE_GROUP","wwwadmin");
+-define("CACHE_FILE_GROUP","wwwadmin");
 +DEFINE("CACHE_FILE_GROUP","http");
  
  // What permissions should the cached file have

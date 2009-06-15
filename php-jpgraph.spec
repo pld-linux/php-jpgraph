@@ -7,7 +7,7 @@ License:	QPL 1.0
 Group:		Libraries
 # Source0Download: http://www.aditus.nu/jpgraph/jpdownload.php
 Source0:	http://hem.bredband.net/jpgraph2/jpgraph-%{version}.tar.gz
-# Source0-md5:	54ab2ac3dc06c608b4af47e22962baa9
+# Source0-md5:	4500906d756dc395a992866e483591ae
 Patch0:		%{name}-config.patch
 URL:		http://www.aditus.nu/jpgraph/
 BuildRequires:	sed >= 4.0

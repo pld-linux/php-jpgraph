@@ -11,7 +11,6 @@ Source0:	http://hem.bredband.net/jpgraph2/jpgraph-%{version}.tar.bz2
 Patch0:		jpgraph-config.patch
 URL:		http://www.aditus.nu/jpgraph/
 BuildRequires:	sed >= 4.0
-BuildRequires:	unzip
 Requires:	php-common >= 4:5.1.0
 Requires:	php-gd
 Obsoletes:	jpgraph2

@@ -62,7 +62,7 @@ Pliki demonstracyjne i przykłady dla pakietu jpgraph.
 
 %prep
 %setup -q -c
-%patch0 -p1
+%patch -P0 -p1
 
 # avoid 1970 in file dates
 find -newer README  -o -print | xargs touch --reference %{SOURCE0}
